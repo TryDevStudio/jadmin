@@ -4,17 +4,43 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>io.github.yourusername</groupId>
+        <groupId>io.github.tacehex</groupId>
         <artifactId>jadmin-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>jadmin-demo</artifactId>
+    <name>jadmin-demo</name>
+    <description>Demo application for JAdmin framework</description>
 
-    <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <dependencies>
+        <!-- Наш Spring Boot Starter -->
+        <dependency>
+            <groupId>io.github.tacehex</groupId>
+            <artifactId>jadmin-spring-boot-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
+        <!-- База данных H2 (in-memory) -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Spring Data JPA -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
